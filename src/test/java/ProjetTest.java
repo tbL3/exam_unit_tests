@@ -4,7 +4,7 @@ import org.junit.jupiter.api.*;
 
 import com.example.*;
 
-public class ProjetTest {
+class ProjetTest {
     
     private Projet projet;
 
@@ -34,5 +34,8 @@ public class ProjetTest {
         projet.supprimerTache("Test 1");
         projet.supprimerTache("Test 2");
         assertEquals(0, projet.calculerDureeTotale());
+        projet.ajouterTache("Test 1", "desc 1", 5);
+        projet.ajouterTache("Test 2", "desc 2", -1);
+        assertEquals(5, projet.calculerDureeTotale());
     }
 }
