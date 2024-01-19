@@ -6,8 +6,8 @@ public class GestionTaches {
     
     public List<Tache> taches = new ArrayList<>();
 
-    public void ajouterTache(String titre, String desc){
-        this.taches.add(new Tache(titre, desc));
+    public void ajouterTache(String titre, String desc, int duree){
+        this.taches.add(new Tache(titre, desc, duree));
     }
 
     public boolean completerTache(String titre){

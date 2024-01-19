@@ -15,22 +15,22 @@ class GestionTachesTest {
 
     @Test
     void ajouterTacheTest(){
-        gestionTaches.ajouterTache("Tester ajout", "On teste l'ajout");
+        gestionTaches.ajouterTache("Tester ajout", "On teste l'ajout", 6);
         assertEquals(1, gestionTaches.taches.size());
-        gestionTaches.ajouterTache(null, null);
+        gestionTaches.ajouterTache(null, null, 6);
         assertEquals(2, gestionTaches.taches.size());
     }
 
     @Test
     void completerTacheTest(){
-        gestionTaches.ajouterTache("Test 2", "Bla bla");
+        gestionTaches.ajouterTache("Test 2", "Bla bla", 6);
         assertEquals(true, gestionTaches.completerTache("Test 2"));
         assertEquals(false, gestionTaches.completerTache("Test 3"));
     }
 
     @Test
     void verifierTacheTest(){
-        gestionTaches.ajouterTache("Test 4", "Bla bla");
+        gestionTaches.ajouterTache("Test 4", "Bla bla", 6);
         gestionTaches.completerTache("Test 4");
         assertEquals("true", gestionTaches.verifierTache("Test 4"));
         assertEquals("La tache n'existe pas", gestionTaches.verifierTache("Test 5"));
